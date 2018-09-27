@@ -1,0 +1,38 @@
+
+
+
+.box {
+    float:left;
+    width:18px;
+    height:18px;
+    margin-right:0px;
+    margin-bottom:0px;
+    background-color:black;
+}
+
+.vert {
+    float:left;
+    width:6px;
+    height:18px;
+    margin-right:0px;
+    margin-bottom:0px;
+    background-color:black;
+}
+
+.horiz {
+    float:left;
+    width:18px;
+    height:6px;
+    margin-right:0px;
+    margin-bottom:0px;
+    background-color:black;
+}
+
+.sbox {
+    float:left;
+    width:6px;
+    height:6px;
+    margin-right:0px;
+    margin-bottom:0px;
+    background-color:black;
+}
