@@ -1,5 +1,9 @@
 
 
+.base {
+    float: left;
+    white-space: nowrap;
+}
 
 .box {
     float:left;
@@ -8,6 +12,7 @@
     margin-right:0px;
     margin-bottom:0px;
     background-color:black;
+    display: inline-block
 }
 
 .vert {
@@ -17,6 +22,7 @@
     margin-right:0px;
     margin-bottom:0px;
     background-color:black;
+    display: inline-block
 }
 
 .horiz {
@@ -26,6 +32,7 @@
     margin-right:0px;
     margin-bottom:0px;
     background-color:black;
+    display: inline-block
 }
 
 .sbox {
@@ -35,4 +42,5 @@
     margin-right:0px;
     margin-bottom:0px;
     background-color:black;
+    display: inline-block
 }

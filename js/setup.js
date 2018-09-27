@@ -21,14 +21,14 @@ $container.appendTo($("body"));
 var x=$('#setupScript').attr("width"), y=$('#setupScript').attr("height")
 for (var j=0; j<y; j++){
 //First vertical line
-	var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('body');
+	var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('#base');
 
   for(var i=0;i<x;i++){
   	$('<div>',{id:"sbox"+i+"_"+j}).addClass("sbox").appendTo(line)
 		$('<div>',{id:"horiz"+i+"_"+j}).addClass("horiz").appendTo(line)
   }
   $('<div>',{id:"sbox"+i+"_"+y}).addClass("sbox").appendTo(line)
-  var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('body');
+  var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('#base');
 
 
 	for(var i=0;i<x;i++){
@@ -40,7 +40,7 @@ for (var j=0; j<y; j++){
 
 }
 
-  var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('body');
+  var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('#base');
   for(var i=0;i<x;i++){
   	$('<div>',{id:"sbox"+x+"_"+j}).addClass("sbox").appendTo(line)
 		$('<div>',{id:"horiz"+x+"_"+j}).addClass("horiz").appendTo(line)

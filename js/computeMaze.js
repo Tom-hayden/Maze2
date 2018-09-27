@@ -10,9 +10,11 @@ function initArray(x,y) {
     return arr;
 }
 
+
 function addPath(start,end){
+    //Changes colour on grid to reflect growth in path.
+
     //x coord same ie. vertical
-    console.log("start: " + start[0] + ' ' + start[1] + ' End: ' + end[0] + ' ' + end[1]);
 
     if (start[0] == end[0]){
         //up
@@ -43,7 +45,7 @@ var mHeight=$('#computeMazeScript').attr("height") ,mWidth=$('#setupScript').att
 var arr = initArray(mWidth,mHeight);
 
 //starting point.
-var x_start = 4, y_start = 4;
+var x_start = 0, y_start = 0;
 $('#box'+ x_start + '_' + y_start).css("background-color","white")
 arr[x_start][y_start] = 0;
 
@@ -51,8 +53,41 @@ arr[x_start][y_start] = 0;
 
 
 var path = [[x_start,y_start]];
-path.push([5,4]);
-addPath(path[0],path[1])
+
+while(true){
+    if (path.length == 0) {
+        break;
+    }
+
+    var available = [];
+    //left
+    if (path[path.length - 1][0] != 0 && arr[path[path.length-1][0] - 1][path[path.length-1][1]] == 1){
+        available.push([path[path.length-1][0] - 1,path[path.length-1][1]]);
+    }
+    //right
+    if (path[path.length - 1][0] != mWidth - 1 && arr[path[path.length-1][0] + 1][path[path.length-1][1]] == 1){
+        available.push([path[path.length-1][0] + 1,path[path.length-1][1]]);
+    }
+    if (path[path.length - 1][1] != mHeight - 1 && arr[path[path.length-1][0]][path[path.length-1][1] + 1 ] == 1){
+        available.push([path[path.length-1][0],path[path.length-1][1] + 1]);
+    }
+    if (path[path.length - 1][1] != 0 && arr[path[path.length-1][0]][path[path.length-1][1] - 1] == 1){
+        available.push([path[path.length-1][0],path[path.length-1][1] - 1]);
+    }
+    if (available.length == 0){
+        path.pop();
+    }
+    else {
+        var direction = Math.floor(Math.random() * available.length)
+        path.push(available[direction]);
+        arr[path[path.length - 1][0]][path[path.length - 1][1]] = 0;
+        addPath(path[path.length - 2],path[path.length - 1]);
+
+    }
+
+
+
+}
 
 
 
