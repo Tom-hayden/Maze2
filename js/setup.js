@@ -18,12 +18,12 @@ $container.appendTo($("body"));
 
 */
 
-var x=$('#setupScript').attr("height") ,y=$('#setupScript').attr("width")
-for (var i=0; i<x; i++){
+var x=$('#setupScript').attr("width"), y=$('#setupScript').attr("height")
+for (var j=0; j<y; j++){
 //First vertical line
 	var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('body');
 
-  for(var j=0;j<y;j++){
+  for(var i=0;i<x;i++){
   	$('<div>',{id:"sbox"+i+"_"+j}).addClass("sbox").appendTo(line)
 		$('<div>',{id:"horiz"+i+"_"+j}).addClass("horiz").appendTo(line)
   }
@@ -31,7 +31,7 @@ for (var i=0; i<x; i++){
   var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('body');
 
 
-	for(var j=0;j<y;j++){
+	for(var i=0;i<x;i++){
   	$('<div>',{id:"vert"+i+"_"+j}).addClass("vert").appendTo(line)
 		$('<div>',{id:"box"+i+"_"+j}).addClass("box").appendTo(line)
 
@@ -41,9 +41,11 @@ for (var i=0; i<x; i++){
 }
 
   var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('body');
-  for(var j=0;j<y;j++){
+  for(var i=0;i<x;i++){
   	$('<div>',{id:"sbox"+x+"_"+j}).addClass("sbox").appendTo(line)
 		$('<div>',{id:"horiz"+x+"_"+j}).addClass("horiz").appendTo(line)
 	}
 
   $('<div>').addClass("sbox").appendTo(line)
+
+  //$('#horiz0_1').css("background-color","red")
