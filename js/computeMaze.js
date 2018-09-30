@@ -41,11 +41,49 @@ function addPath(start,end){
 
 }
 
-var mHeight=$('#computeMazeScript').attr("height") ,mWidth=$('#setupScript').attr("width")
+
+function setup(x,y){
+    //sets up divs.
+    for (var j=0; j<y; j++){
+    //border lines
+      var line=$('<div>', {id:"Line border :"+j } ).css({clear:'both',width:'100%'}).appendTo("#base");
+      for(var i=0;i<x;i++){
+      	$('<div>',{id:"sbox"+i+"_"+j}).addClass("sbox").appendTo(line)
+    	$('<div>',{id:"horiz"+i+"_"+j}).addClass("horiz").appendTo(line)
+      }
+      //right most box
+      $('<div>',{id:"sbox"+i+"_"+y}).addClass("sbox").appendTo(line)
+
+      //main lines
+      var line=$('<div>', {id:"Line main:"+j } ).css({clear:'both',width:'100%'}).appendTo('#base');
+    	for(var i=0;i<x;i++){
+      	$('<div>',{id:"vert"+i+"_"+j}).addClass("vert").appendTo(line)
+    		$('<div>',{id:"box"+i+"_"+j}).addClass("box").appendTo(line)
+
+    	}
+      $('<div>',{id:"vert"+i+"_"+ y}).addClass("vert").appendTo(line)
+
+    }
+
+      //final border line.
+      var line=$('<div>', {id:"X"+i } ).css({clear:'both',width:'100%'}).appendTo('#base');
+      for(var i=0;i<x;i++){
+      	$('<div>',{id:"sbox"+x+"_"+j}).addClass("sbox").appendTo(line)
+    		$('<div>',{id:"horiz"+x+"_"+j}).addClass("horiz").appendTo(line)
+    	}
+
+      $('<div>').addClass("sbox").appendTo(line)
+ }
+
+
+
+var mHeight=$('#computeMazeScript').attr("height") ,mWidth=$('#computeMazeScript').attr("width")
+
+setup(mWidth,mHeight);
 var arr = initArray(mWidth,mHeight);
 
 //starting point.
-var x_start = 0, y_start = 0;
+var x_start = 3, y_start = 4;
 $('#box'+ x_start + '_' + y_start).css("background-color","white")
 arr[x_start][y_start] = 0;
 
@@ -88,7 +126,6 @@ while(true){
 
 
 }
-
 
 
 
